@@ -80,11 +80,11 @@
       &:not(:last-child)::after {
         content: "";
         position: absolute;
-        left: 50%; // Centrowanie linii
-        bottom: 0; // Ustawienie linii na dole elementu
-        width: 330px; // Długość linii to 80% szerokości elementu
-        height: 1px; // Wysokość linii to 1px
-        background: #d9d9d9; // Kolor linii
+        left: 50%;
+        bottom: 0;
+        width: 330px;
+        height: 1px;
+        background: #d9d9d9;
         transform: translateX(-50%);
       }
 
@@ -101,8 +101,8 @@
   &__loading {
     display: none;
     position: absolute;
-    top: 50%;
-    right: 50px;
+    top: 30px;
+    right: 40px;
     width: 21.94px;
     transform: translateY(-50%);
     opacity: 0;
@@ -117,8 +117,8 @@
 
 .product__price {
   font-size: 13px;
-  font-weight: 500; // Rozmiar czcionki ceny może być taki sam jak tytułu
-  color: #000000; // Kolor tekstu ceny
+  font-weight: 500;
+  color: #000000;
 }
 
 .search__input:focus ~ .search__loading {

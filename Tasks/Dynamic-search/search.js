@@ -18,15 +18,19 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleSearchLabel();
   }
 
+  let debounceTimer;
   function handleInput() {
     const query = searchInput.value;
     currentQuery = query;
 
-    if (query.length > 0) {
-      fetchResults(query);
-    } else {
-      clearSearchResults();
-    }
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      if (query.length > 0) {
+        fetchResults(query);
+      } else {
+        clearSearchResults();
+      }
+    }, 500);
   }
 
   searchInput.addEventListener("input", () => {

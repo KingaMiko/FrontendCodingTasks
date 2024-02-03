@@ -521,8 +521,8 @@ nav::after {
 .search__loading {
   display: none;
   position: absolute;
-  top: 50%;
-  right: 50px;
+  top: 30px;
+  right: 40px;
   width: 21.94px;
   transform: translateY(-50%);
   opacity: 0;
