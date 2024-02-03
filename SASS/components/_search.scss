@@ -1,0 +1,147 @@
+.search {
+  position: relative;
+  max-width: 370px;
+  margin: 20px auto;
+  font-family: $font-family-inter;
+  font-size: 13px;
+  color: #8d8d8d;
+  &__input {
+    width: 100%;
+    height: 60px;
+    padding: 15px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    font-weight: 300;
+    &:focus {
+      border: 1px solid #d1d1d1;
+      outline: none;
+      box-shadow: none;
+
+      + .search__label {
+        display: none;
+        background-color: #fff;
+        padding: 5px;
+        top: -12px;
+        left: 12px;
+        font-size: 12px;
+        color: #a1a1a1;
+      }
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+  &__label {
+    position: absolute;
+    left: 15px;
+    top: 22px;
+    padding: 0;
+    transition: transform 0.3s, font-size 0.3s, color 0.3s;
+    pointer-events: none;
+    color: #cccccc;
+  }
+  &__icon {
+    position: absolute;
+    top: 21px;
+    right: 18px;
+    width: 18px;
+    height: 18px;
+    z-index: 10;
+  }
+
+  &__result {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background: #fff;
+    z-index: 1000;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    &.active {
+      display: flex;
+    }
+    &-item {
+      display: none;
+      display: flex;
+      background-color: #f4f4f4;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      height: 55px;
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 50%; // Centrowanie linii
+        bottom: 0; // Ustawienie linii na dole elementu
+        width: 330px; // Długość linii to 80% szerokości elementu
+        height: 1px; // Wysokość linii to 1px
+        background: #d9d9d9; // Kolor linii
+        transform: translateX(-50%);
+      }
+
+      &:last-child {
+        border-bottom: none;
+        border-radius: 0 0 5px 5px;
+      }
+      &:first-child {
+        margin-top: 20px;
+        border-radius: 5px 5px 0 0;
+      }
+    }
+  }
+  &__loading {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    width: 21.94px;
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+
+.product__title {
+  font-size: 13px;
+  font-weight: 300;
+  color: #000000;
+}
+
+.product__price {
+  font-size: 13px;
+  font-weight: 500; // Rozmiar czcionki ceny może być taki sam jak tytułu
+  color: #000000; // Kolor tekstu ceny
+}
+
+.search__input:focus ~ .search__loading {
+  display: none;
+  animation: rotateLoading 6s linear infinite, pulse 2s ease-in-out infinite;
+}
+
+@keyframes rotateLoading {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

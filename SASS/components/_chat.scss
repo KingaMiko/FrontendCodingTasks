@@ -1,0 +1,116 @@
+.terminal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 10px;
+  position: relative;
+  &__window {
+    background: linear-gradient(180deg, #141414 0%, #131313 100%);
+    color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 726px;
+    height: 374px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__bar {
+    background: #3e3e3e;
+    padding: 5px 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__title {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: $font-family-inter;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  &__button {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+  }
+  &__button--close {
+    background: #e52a2a;
+  }
+  &__button--minimize {
+    background: #e5bc2a;
+  }
+
+  &__button--maximize {
+    background: #2ae53d;
+  }
+  &__content {
+    padding: 20px;
+    background: #000;
+    flex-grow: 1;
+    overflow-y: auto;
+    font-family: $font-family-mono;
+    font-size: 12px;
+    line-height: 3;
+  }
+  &__input {
+    background: #3e3e3e;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    align-self: center;
+    width: calc(100% - 30px);
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  &__input:focus {
+    outline: none;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.firework-dot {
+  position: absolute;
+  top: 0;
+  width: 5px;
+  height: 5px;
+  background-color: yellow;
+  border-radius: 50%;
+  animation: twinkle 1s infinite;
+}
+
+.suggestions {
+  position: absolute;
+  top: 68%;
+  left: 30%;
+  background-color: black;
+  color: white;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.suggestion {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.suggestion.highlighted {
+  background-color: #7c7878;
+  color: black;
+  border-radius: 10px;
+}

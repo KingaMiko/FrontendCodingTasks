@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Search</title>
+    <link rel="stylesheet" href="../../SASS/main.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="search">
+        <input
+          type="text"
+          class="search__input"
+          id="searchInput"
+          placeholder="Search"
+          autocomplete="off"
+        />
+        <label for="searchInput" class="search__label">Search</label>
+        <img
+          src="../../icons/Vector.svg"
+          class="search__loading"
+          alt="Loading"
+        />
+        <img src="../../icons/Search.svg" class="search__icon" alt="Search" />
+        <div class="search__results" id="searchResults"></div>
+      </div>
+      <div class="back-to-home">
+        <a href="../../index.html">Go back</a>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="search.js" type="module"></script>
+  </body>
+</html>

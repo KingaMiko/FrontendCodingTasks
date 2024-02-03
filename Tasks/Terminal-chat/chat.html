@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Chat</title>
+    <link rel="stylesheet" href="../../SASS/main.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="terminal">
+        <div class="terminal__window">
+          <div class="terminal__bar">
+            <div class="terminal__button terminal__button--close"></div>
+            <div class="terminal__button terminal__button--minimize"></div>
+            <div class="terminal__button terminal__button--maximize"></div>
+            <span class="terminal__title">webjaksklep</span>
+          </div>
+          <div class="terminal__content" id="output">
+            <div id="loginInfo">
+              Last login: <span id="lastLoginDate"></span>
+            </div>
+            <div class="terminal__line">
+              <span id="userInputDisplay"></span>
+            </div>
+            <div
+              class="terminal__line terminal__line--response"
+              id="terminalResponse"
+            ></div>
+          </div>
+          <input
+            type="text"
+            class="terminal__input"
+            id="input"
+            autocomplete="off"
+            placeholder="|"
+          />
+        </div>
+        <div id="suggestionBox" class="suggestions"></div>
+      </div>
+      <div class="back-to-home">
+        <a href="../../index.html">Go back</a>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="chat.js" type="module"></script>
+  </body>
+</html>

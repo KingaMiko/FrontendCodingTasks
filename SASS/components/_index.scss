@@ -1,0 +1,39 @@
+li {
+  margin: 10px;
+}
+
+.tasks__item {
+  text-decoration: underline;
+  list-style: circle;
+}
+
+.back-to-home {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background: #4caf50;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden; /* Zapobiega wychodzeniu tła poza granice przycisku */
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out; /* Dodajemy płynne przejście */
+}
+
+.back-to-home a {
+  display: inline-block;
+  padding: 8px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out;
+}
+
+.back-to-home:hover {
+  background: #45a049; /* Lekka zmiana koloru tła przy najechaniu */
+  transform: scale(1.05); /* Lekkie powiększenie */
+}
+
+.back-to-home:hover a {
+  color: #e0e0e0; /* Lekka zmiana koloru tekstu */
+}
