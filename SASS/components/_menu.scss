@@ -48,10 +48,10 @@ nav {
     height: 24px;
     background-repeat: no-repeat;
     margin-left: 8px;
-    background-image: url("/icons/Arrow-down.svg");
+    background-image: url("/FrontendCodingTasks/icons/Arrow-down.svg");
   }
   &__link--arrow-up::after {
-    background-image: url("/icons/Arrow-up.svg");
+    background-image: url("/FrontendCodingTasks/icons/Arrow-up.svg");
   }
   &__item:last-child .menu__link {
     background-color: #ff4242;
