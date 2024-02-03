@@ -212,7 +212,7 @@ function handleKeyDown(e) {
       commandHistory.push(commandText);
       historyIndex = commandHistory.length;
     }
-    event.preventDefault();
+    e.preventDefault();
   } else if (key === "ArrowUp") {
     if (isSuggestionVisible) {
       currentIndex =
@@ -222,7 +222,7 @@ function handleKeyDown(e) {
       historyIndex--;
       input.value = commandHistory[historyIndex];
     }
-    event.preventDefault();
+    e.preventDefault();
   } else if (key === "ArrowDown") {
     if (isSuggestionVisible) {
       currentIndex = (currentIndex + 1) % suggestions.length;
@@ -231,7 +231,7 @@ function handleKeyDown(e) {
       historyIndex++;
       input.value = commandHistory[historyIndex];
     }
-    event.preventDefault();
+    e.preventDefault();
   }
 }
 
