@@ -440,7 +440,6 @@ nav::after {
   box-shadow: none;
 }
 .search__input:focus + .search__label {
-  display: none;
   background-color: #fff;
   padding: 5px;
   top: -12px;

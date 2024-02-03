@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentQuery = "";
 
   function toggleSearchLabel() {
+    console.log("toggleSearchLabel called");
     searchLabel.style.display =
       searchInput.value.trim() !== "" ? "none" : "block";
   }
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     searchResults.innerHTML = "";
     searchResults.classList.remove("active");
     loadingIcon.style.display = "none";
+    toggleSearchLabel();
   }
 
   function handleInput() {
@@ -28,11 +30,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   searchInput.addEventListener("input", () => {
-    toggleSearchLabel();
     handleInput();
   });
 
-  searchInput.addEventListener("blur", toggleSearchLabel);
+  searchInput.addEventListener("blur", () => {
+    toggleSearchLabel();
+  });
+
+  searchInput.addEventListener("focus", () => {
+    searchLabel.style.display = "block";
+  });
 
   if (searchInput.value.trim() !== "") {
     toggleSearchLabel();
