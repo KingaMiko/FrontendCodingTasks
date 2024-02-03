@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentQuery = "";
 
   function toggleSearchLabel() {
-    console.log("toggleSearchLabel called");
     searchLabel.style.display =
       searchInput.value.trim() !== "" ? "none" : "block";
   }
